@@ -1,0 +1,21 @@
+.Navigation {
+    background-color: #6600ff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.Navigation a {
+    padding: 5px 21px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.Navigation a.Active,
+.Navigation a:active {
+    background-color: #fff;
+    color: #6600ff;
+}
