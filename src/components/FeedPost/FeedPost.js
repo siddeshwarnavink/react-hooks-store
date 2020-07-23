@@ -2,18 +2,14 @@ import React from 'react';
 
 import classes from './FeedPost.module.css';
 import Card from '../UI/Card/Card';
-import Button from '../UI/Button/Button'
+import BookmarkButton from './BookmarkButton/BookmarkButton'
 
-const feedPost = props => (
+const FeedPost = React.memo(props => (
     <Card className={classes.FeedPost}>
         <h3>{props.title}</h3>
         <p>{props.description}</p>
-        {props.isBookmarked ? (
-            <Button hollow>Remove from Bookmark</Button>
-        ) : (
-            <Button>Add to Bookmark</Button>
-        )}
+        <BookmarkButton id={props.id} />
     </Card>
-)
+));
 
-export default feedPost;
+export default FeedPost;

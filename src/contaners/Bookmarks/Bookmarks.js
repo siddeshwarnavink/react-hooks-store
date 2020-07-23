@@ -1,13 +1,31 @@
 import React from 'react';
 
+import { useStore } from '../../store/store';
 import FeedPost from '../../components/FeedPost/FeedPost'
 
-const bookmarks = () => (
+export const Bookmarks = props => (
     <React.Fragment>
         <h1>Bookmarks</h1>
-
-        <FeedPost title="Another post." description="Sample description." isBookmarked />
+        {props.bookmarkedPost.length < 1 ? (<p>No bookmarks found.</p>) : (
+            props.bookmarkedPost.map(feedData => (
+                <FeedPost
+                    key={feedData.id}
+                    id={feedData.id}
+                    title={feedData.title}
+                    description={feedData.body}
+                    isBookmarked
+                />
+            ))
+        )}
     </React.Fragment>
-);
+)
 
-export default bookmarks;
+const BookmarksHook = () => {
+    const state = useStore()[0];
+
+    return (
+        <Bookmarks bookmarkedPost={state.feed.bookmarkedPost} />
+    );
+}
+
+export default BookmarksHook;

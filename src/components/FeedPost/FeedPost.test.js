@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import FeedPost from './FeedPost';
 import Card from '../UI/Card/Card';
-import Button from '../UI/Button/Button';
+import BookmarkButton from './BookmarkButton/BookmarkButton'
 
 configure({ adapter: new Adapter() });
 
@@ -27,8 +27,8 @@ describe('Component: <FeedPost />', () => {
         expect(wrapper.find(Card)).toHaveLength(1);
     });
 
-    it('should render a <Button />', () => {
-        expect(wrapper.find(Button)).toHaveLength(1);
+    it('should render a <BookmarkButton />', () => {
+        expect(wrapper.find(BookmarkButton)).toHaveLength(1);
     });
 
     it('should render a title', () => {
