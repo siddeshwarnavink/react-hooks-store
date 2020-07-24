@@ -7,6 +7,9 @@ const button = props => {
     if(props.hollow) {
         classList.push(classes.Hollow)
     }
+    if(props.className) {
+        classList.push(props.className)
+    }
     
     return (
         <button className={classList.join(' ')} onClick={props.clicked}>{props.children}</button>

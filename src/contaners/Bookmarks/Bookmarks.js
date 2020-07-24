@@ -6,7 +6,7 @@ import FeedPost from '../../components/FeedPost/FeedPost'
 export const Bookmarks = props => (
     <React.Fragment>
         <h1>Bookmarks</h1>
-        {props.bookmarkedPost.length < 1 ? (<p>No bookmarks found.</p>) : (
+        {props.bookmarkedPost.length < 1 ? (<p id="no-bookmark">No bookmarks found.</p>) : (
             props.bookmarkedPost.map(feedData => (
                 <FeedPost
                     key={feedData.id}

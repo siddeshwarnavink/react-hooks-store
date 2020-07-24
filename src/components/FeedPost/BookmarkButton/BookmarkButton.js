@@ -4,9 +4,9 @@ import { useStore } from '../../../store/store'
 import Button from '../../UI/Button/Button'
 
 export const BookmarkButton = props => props.isBookmarked ? (
-    <Button hollow clicked={props.toggleBookmark}>Remove from Bookmark</Button>
+    <Button hollow clicked={props.toggleBookmark} className="bookmark-button">Remove from Bookmark</Button>
 ) : (
-        <Button clicked={props.toggleBookmark}>Add to Bookmark</Button>
+        <Button clicked={props.toggleBookmark} className="bookmark-button">Add to Bookmark</Button>
     );
 
 const BookmarkButtonHook = props => {
